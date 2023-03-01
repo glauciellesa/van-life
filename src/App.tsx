@@ -7,6 +7,7 @@ import {
 import Home from "./pages/Home/Home";
 import RootLayout from "./Layout/RootLayout";
 import About from "./pages/About/About";
+import "./App.css";
 
 function App() {
   const router = createBrowserRouter(
