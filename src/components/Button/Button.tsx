@@ -3,21 +3,25 @@ import styled from "styled-components";
 
 interface ButtonProps {
   children?: ReactNode;
+  color: string;
 }
 const Button = (props: ButtonProps) => {
-  return <StyledButton>{props.children}</StyledButton>;
+  return (
+    <StyledButton style={{ backgroundColor: props.color }}>
+      {props.children}
+    </StyledButton>
+  );
 };
 
 export default Button;
 
 const StyledButton = styled.button`
-  background-color: #ff8c38;
   color: #ffffff;
   text-align: center;
   border: none;
   border-radius: 0.5rem;
   padding: 1rem;
-  width: 80%;
+  width: 100%;
   font-size: 1rem;
   font-weight: bold;
 `;
