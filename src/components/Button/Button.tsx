@@ -7,7 +7,7 @@ interface ButtonProps {
 }
 const Button = (props: ButtonProps) => {
   return (
-    <StyledButton style={{ backgroundColor: props.color }}>
+    <StyledButton style={{ background: props.color }}>
       {props.children}
     </StyledButton>
   );
@@ -15,7 +15,7 @@ const Button = (props: ButtonProps) => {
 
 export default Button;
 
-const StyledButton = styled.button`
+const StyledButton = styled.div`
   color: #ffffff;
   text-align: center;
   border: none;

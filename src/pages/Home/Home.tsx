@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Button from "../../components/Button/Button";
-import homeImg from "../../img/homeImg.jpg";
+import homeImg from "../../img/homeImg.png";
 
 const Home = () => {
   return (
@@ -13,7 +13,7 @@ const Home = () => {
           Add adventure to your life by joining the #vanlife movement. Rent the
           perfect van to make your perfect road trip.
         </p>
-        <Button> Find your van </Button>
+        <Button color="#FF8C38"> Find your van </Button>
       </div>
     </StyledHome>
   );
@@ -31,11 +31,12 @@ const StyledHome = styled.div`
   align-items: center;
   padding: 2rem;
   position: relative;
-  isolation: isolate;
   background-image: url(${homeImg});
-  background-size: cover;
+  isolation: isolate;
   background-position: center;
-  background-position: 0px -1000px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   &:after {
     content: "";

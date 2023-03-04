@@ -1,4 +1,4 @@
-import aboutImg from "../../img/about.jpg";
+import aboutImg from "../../img/aboutImg.png";
 import styled from "styled-components";
 import Button from "../../components/Button/Button";
 
