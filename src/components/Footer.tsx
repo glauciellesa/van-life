@@ -10,9 +10,12 @@ const Footer = () => {
 
 export default Footer;
 
-const StyledFooter = styled.footer`
+const StyledFooter = styled.div`
+  height: 3rem;
   background-color: #252525;
-  color: #aaaa;
-  padding: 2rem;
-  text-align: center;
+  color: #aaaaaa;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

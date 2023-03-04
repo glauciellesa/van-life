@@ -20,8 +20,7 @@ const StyledButton = styled.div`
   text-align: center;
   border: none;
   border-radius: 0.5rem;
-  padding: 1rem;
-  width: 100%;
+  padding: 0.4rem;
   font-size: 1rem;
   font-weight: bold;
 `;

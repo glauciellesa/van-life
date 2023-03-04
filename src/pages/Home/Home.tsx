@@ -23,7 +23,7 @@ export default Home;
 
 const StyledHome = styled.div`
   width: 100%;
-  height: 30rem;
+  height: 100%;
   color: #fff;
   display: flex;
   flex-direction: column;
