@@ -7,8 +7,9 @@ import {
 import Home from "./pages/Home/Home";
 import RootLayout from "./Layout/RootLayout";
 import About from "./pages/About/About";
-import Vans from "./pages/Vans/Vans";
+import Vans, { vansLoader } from "./pages/Vans/Vans";
 import PageNotFound from "./pages/PageNotFound";
+import VanDetail, { vanLoader } from "./pages/Vans/VanDetail/VanDetail";
 
 function App() {
   const router = createBrowserRouter(
@@ -16,7 +17,8 @@ function App() {
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
-        <Route path="vans" element={<Vans />} />
+        <Route path="vans" element={<Vans />} loader={vansLoader} />
+        <Route path="vans/:id" element={<VanDetail />} loader={vanLoader} />
         <Route path="*" element={<PageNotFound />} />
       </Route>
     )
