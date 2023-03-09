@@ -46,12 +46,11 @@ const StyledAbout = styled.div`
   }
 
   .about_content {
-    padding: 0.5rem 1rem;
+    padding: 1rem 1.5rem;
   }
   .about_title {
     font-weight: bold;
     font-size: 1.5rem;
-
     padding: 1.4rem 0;
   }
   .about_description {
@@ -73,5 +72,8 @@ const StyledAbout = styled.div`
   .mission_button {
     padding: 0 0.5rem;
     width: 12rem;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
   }
 `;

@@ -23,7 +23,8 @@ const Navbar = () => {
 export default Navbar;
 
 const StyledNavbar = styled.nav`
-  background-color: #fff7ed;
+  align-self: center;
+  background-color: #fffbf7;
   display: flex;
   justify-content: space-between;
   align-items: center;
