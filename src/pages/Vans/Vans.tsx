@@ -42,8 +42,8 @@ const StyledVans = styled.div`
   padding: 3rem 1rem;
 
   h1 {
-    font-size: 2rem;
-    line-height: 2.2rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
     font-weight: bold;
   }
   .vans_cards {
