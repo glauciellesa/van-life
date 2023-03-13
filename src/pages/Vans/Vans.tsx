@@ -22,6 +22,7 @@ const Vans = () => {
   return (
     <StyledVans className="vans_container">
       <h1>Explore our van options</h1>
+
       <div className="vans_cards">
         {vans.map((van) => {
           return (

@@ -1,9 +1,5 @@
 const filterVans = () => {
-  return (
-    <div>
-      <button></button>
-    </div>
-  );
+  return <div></div>;
 };
 
 export default filterVans;
