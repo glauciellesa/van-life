@@ -1,8 +1,10 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../../img/logog.png";
-/* / src / img / logog.png;
-/src/components/Menu/Navbar.tsx */
+
+// get our fontawesome imports
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   return (
@@ -13,8 +15,12 @@ const Navbar = () => {
         </NavLink>
       </div>
       <div className="menu_navbar">
+        <NavLink to="host"> Host</NavLink>
         <NavLink to="about"> About</NavLink>
         <NavLink to="vans"> Vans</NavLink>
+        <NavLink to="login">
+          <FontAwesomeIcon icon={faCircleUser} />
+        </NavLink>
       </div>
     </StyledNavbar>
   );
