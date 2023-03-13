@@ -11,8 +11,13 @@ import styled from "styled-components";
 import { getVans } from "../../services/VansService";
 import CardVan from "./cardVan/CardVan";
 
+type MyLoaderData = {
+  map(arg0: (career: any) => void): import("react").ReactNode;
+  careers: [];
+};
+
 const Vans = () => {
-  const vans = useLoaderData();
+  const vans = useLoaderData() as MyLoaderData;
 
   return (
     <StyledVans className="vans_container">
@@ -55,7 +60,7 @@ const StyledVans = styled.div`
   }
 `;
 
-export const vansLoader = async ({ request, params }) => {
+export const vansLoader = async ({ request, params }: any) => {
   console.log({ request, params });
   return getVans();
 };

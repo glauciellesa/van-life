@@ -5,8 +5,8 @@ import { Van } from "../../../models/Van";
 import { getVan } from "../../../services/VansService";
 
 const VanDetail = () => {
-  const van: Van = useLoaderData();
-  console.log({ van });
+  const van = useLoaderData() as Van;
+
   return (
     <StyledVanDetail>
       <div className="van_img">
@@ -88,7 +88,6 @@ const StyledVanDetail = styled.div`
   }
 `;
 
-export const vanLoader = async ({ request, params }) => {
-  console.log({ request, params });
+export const vanLoader = async ({ request, params }: any) => {
   return getVan(+params.id);
 };

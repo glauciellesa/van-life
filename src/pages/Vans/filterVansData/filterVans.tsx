@@ -1,9 +1,7 @@
-import React from "react";
-
-const filterVans = (props) => {
+const filterVans = () => {
   return (
     <div>
-      <button>{props.children}</button>
+      <button></button>
     </div>
   );
 };
