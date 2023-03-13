@@ -13,7 +13,9 @@ const Home = () => {
           Add adventure to your life by joining the #vanlife movement. Rent the
           perfect van to make your perfect road trip.
         </p>
-        <Button color="#FF8C38"> Find your van </Button>
+        <div className="home_button">
+          <Button> Find your van </Button>
+        </div>
       </div>
     </StyledHome>
   );
@@ -37,6 +39,15 @@ const StyledHome = styled.div`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
+  .home_button {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    background-color: #ff8c38;
+  }
 
   &:after {
     content: "";

@@ -19,5 +19,6 @@ const StyledButton = styled.div`
   border-radius: 0.3rem;
   text-align: center;
   border: none;
-  padding: 0.35rem;
+  padding: 0.35rem 1rem;
+  width: fit-content;
 `;

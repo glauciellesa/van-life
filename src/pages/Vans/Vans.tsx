@@ -13,7 +13,7 @@ import CardVan from "./cardVan/CardVan";
 
 const Vans = () => {
   const vans = useLoaderData();
-  console.log({ vans });
+
   return (
     <StyledVans className="vans_container">
       <h1>Explore our van options</h1>
@@ -26,7 +26,7 @@ const Vans = () => {
                 product={van.product}
                 price={van.price}
                 type={van.type}
-                color={van.bottonColor}
+                color={van.color}
               />
             </Link>
           );

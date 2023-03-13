@@ -24,7 +24,7 @@ export default Navbar;
 
 const StyledNavbar = styled.nav`
   align-self: center;
-  background-color: #fffbf7;
+  background-color: #fff7ed;
   display: flex;
   justify-content: space-between;
   align-items: center;
