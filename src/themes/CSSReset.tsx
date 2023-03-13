@@ -7,5 +7,6 @@ const CSSReset = createGlobalStyle`
     margin: 0;
     text-decoration: none;
   }
-`;
+
+  `;
 export default CSSReset;
