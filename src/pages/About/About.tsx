@@ -46,7 +46,7 @@ const StyledAbout = styled.div`
   }
 
   .about_content {
-    padding: 1rem 1.5rem;
+    padding: 1rem 1.2rem;
   }
   .about_title {
     font-weight: bold;

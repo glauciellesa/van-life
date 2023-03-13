@@ -1,10 +1,11 @@
 import { useLoaderData } from "react-router-dom";
 import styled from "styled-components";
 import Button from "../../../components/Button/Button";
+import { Van } from "../../../models/Van";
 import { getVan } from "../../../services/VansService";
 
 const VanDetail = () => {
-  const van = useLoaderData();
+  const van: Van = useLoaderData();
   console.log({ van });
   return (
     <StyledVanDetail>
