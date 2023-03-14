@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Van } from "../../models/Van";
 import { getVans, getVansByType } from "../../services/VansService";
 
-import CardVan from "./cardVan/CardVan";
+import CardVan from "./CardVan/CardVan";
 import FilterVans from "./FilterVansData/FilterVans";
 
 const Vans = () => {
