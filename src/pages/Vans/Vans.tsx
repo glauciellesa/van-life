@@ -5,7 +5,7 @@ import { Van } from "../../models/Van";
 import { getVans, getVansByType } from "../../services/VansService";
 
 import CardVan from "./CardVan/CardVan";
-import FilterVans from "./FilterVansData/FilterVans";
+import FilterVans from "./FilterVansData/FilterV";
 
 const Vans = () => {
   const [search, setSearch] = useSearchParams();
