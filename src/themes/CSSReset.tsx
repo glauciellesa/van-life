@@ -6,7 +6,11 @@ const CSSReset = createGlobalStyle`
     padding: 0;
     margin: 0;
     text-decoration: none;
+    &:focus{
+      outline: none;
+    }
   }
+  
 
   `;
 export default CSSReset;

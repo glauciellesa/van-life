@@ -1,32 +1,32 @@
-/* import dreamfinder from "../../img/dreamfinder.png";
-import reliableRed from "../../img/reliable_red.png";
-import theCruiser from "../../img/the_cruiser.png";
-import greenWonder from "../../img/green_wonder.png";
-import modestExplorer from "../../img/modest_explorer.png";
-import beachBum from "../../img/beach_bum.png";
- */
-
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useSearchParams } from "react-router-dom";
 import styled from "styled-components";
-import { getVans } from "../../services/VansService";
-import CardVan from "./cardVan/CardVan";
 
-type MyLoaderData = {
-  map(arg0: (career: any) => void): import("react").ReactNode;
-  careers: [];
-};
+import { Van } from "../../models/Van";
+import { getVans, getVansByType } from "../../services/VansService";
+
+import CardVan from "./cardVan/CardVan";
+import FilterVans from "./FilterVansData/FilterVans";
 
 const Vans = () => {
-  const vans = useLoaderData() as MyLoaderData;
+  const [search, setSearch] = useSearchParams();
+
+  const vans = useLoaderData() as Array<Van>;
+
+  const selectedTypeHandler = (selectedType: string) => {
+    setSearch({ type: selectedType });
+  };
 
   return (
     <StyledVans className="vans_container">
       <h1>Explore our van options</h1>
-
+      <div className="filter">
+        <FilterVans onSelecteVanType={selectedTypeHandler} />
+        <p onClick={() => setSearch({ type: "" })}>Clear filters</p>
+      </div>
       <div className="vans_cards">
         {vans.map((van) => {
           return (
-            <Link to={van.id.toString()} key={van.id}>
+            <Link to={van.id?.toString() ?? ""} key={van.id}>
               <CardVan
                 img={van.img}
                 product={van.product}
@@ -45,13 +45,27 @@ const Vans = () => {
 export default Vans;
 
 const StyledVans = styled.div`
-  padding: 3rem 1rem;
+  padding: 3rem 1.2rem;
 
   h1 {
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: bold;
   }
+
+  .filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    p {
+      font-size: 0.8rem;
+      color: #4d4d4d;
+      text-decoration: underline;
+      text-underline-offset: 0.2rem;
+    }
+  }
+
   .vans_cards {
     display: grid;
     align-items: center;
@@ -62,6 +76,9 @@ const StyledVans = styled.div`
 `;
 
 export const vansLoader = async ({ request, params }: any) => {
-  console.log({ request, params });
+  const vanType = new URL(request.url).searchParams.get("type");
+  if (vanType) {
+    return getVansByType(vanType);
+  }
   return getVans();
 };

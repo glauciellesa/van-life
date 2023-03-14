@@ -1,13 +1,21 @@
-import { ReactNode } from "react";
+import { ChangeEvent, ReactNode } from "react";
 import styled from "styled-components";
 
 interface ButtonProps {
   children?: ReactNode;
   color?: string;
+  onClick?: (event: any) => void;
+  value?: string;
 }
 const Button = (props: ButtonProps) => {
   return (
-    <StyledButton style={{ background: props.color }}>
+    <StyledButton
+      style={{ backgroundColor: props.color }}
+      onClick={(e) =>
+        props.onClick &&
+        props.onClick({ ...e, target: { ...e.target, value: props.value } })
+      }
+    >
       {props.children}
     </StyledButton>
   );
