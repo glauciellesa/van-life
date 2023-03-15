@@ -4,7 +4,11 @@ import { faEyeSlash, faEye } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import styled from "styled-components";
 
-const HandlePassword = () => {
+interface HandlePasswordProps {
+  onTypedPassword: (passedPassword: string) => void;
+}
+
+const HandlePassword = (props: HandlePasswordProps) => {
   const [values, setValues] = useState({ password: "", showPassword: false });
 
   const handleClickShowPassword = () => {
@@ -14,6 +18,7 @@ const HandlePassword = () => {
   const handlePasswordChange =
     (prop: string) => (event: { target: { value: any } }) => {
       setValues({ ...values, [prop]: event.target.value });
+      props.onTypedPassword(values.password);
     };
 
   const visibility = <FontAwesomeIcon icon={faEye} />;
@@ -26,7 +31,6 @@ const HandlePassword = () => {
         className="inputField"
         type={values.showPassword ? "text" : "password"}
         onChange={handlePasswordChange("password")}
-        value={values.password}
         id="password"
         placeholder="Password"
       />

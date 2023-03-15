@@ -24,4 +24,5 @@ Router
 
 useSearchParams
 
-teste
+Firebase
+Autentication (password/email) google
