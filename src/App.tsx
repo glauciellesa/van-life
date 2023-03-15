@@ -27,7 +27,6 @@ function App() {
         <Route path="mypage" element={<MyPage />} />
         <Route path="host" element={<Host />}>
           <Route path="dashboard" element={<Dashboard />} />
-          <Route path="dashboard" element={<Dashboard />} />
         </Route>
         <Route path="*" element={<PageNotFound />} />
       </Route>
