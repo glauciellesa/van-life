@@ -1,33 +1,95 @@
+import { lazy, Suspense } from "react";
 import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
   RouterProvider,
 } from "react-router-dom";
-import Home from "./pages/Home/Home";
 import RootLayout from "./Layout/RootLayout";
-import About from "./pages/About/About";
-import Vans, { vansLoader } from "./pages/Vans/Vans";
+import { vansLoader } from "./pages/Vans/Vans";
 import PageNotFound from "./pages/PageNotFound";
-import VanDetail, { vanLoader } from "./pages/Vans/VanDetail/VanDetail";
-import Host from "./pages/Host/Host";
-import Login from "./pages/Login/Login";
-import MyPage from "./pages/Login/MyPage";
-import Dashboard from "./pages/Host/Dashboard/Dashboard";
+import { vanLoader } from "./pages/Vans/VanDetail/VanDetail";
+
+const Home = lazy(() => import("./pages/Home/Home"));
+const About = lazy(() => import("./pages/About/About"));
+const Vans = lazy(() => import("./pages/Vans/Vans"));
+const VanDetail = lazy(() => import("./pages/Vans/VanDetail/VanDetail"));
+const Login = lazy(() => import("./pages/Login/Login"));
+const Host = lazy(() => import("./pages/Host/Host"));
+const MyPage = lazy(() => import("./pages/Login/MyPage"));
+const Dashboard = lazy(() => import("./pages/Host/Dashboard/Dashboard"));
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
-        <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="vans" element={<Vans />} loader={vansLoader} />
-        <Route path="vans/:id" element={<VanDetail />} loader={vanLoader} />
-        <Route path="login" element={<Login />} />
-        <Route path="mypage" element={<MyPage />} />
-        <Route path="host" element={<Host />}>
-          <Route path="dashboard" element={<Dashboard />} />
-        </Route>
+        <Route
+          index
+          element={
+            <Suspense fallback={<>...</>}>
+              <Home />
+            </Suspense>
+          }
+        />
+        <Route
+          path="about"
+          element={
+            <Suspense fallback={<>...</>}>
+              <About />
+            </Suspense>
+          }
+        />
+        <Route
+          path="vans"
+          element={
+            <Suspense fallback={<>...</>}>
+              <Vans />
+            </Suspense>
+          }
+          loader={vansLoader}
+        />
+        <Route
+          path="vans/:id"
+          element={
+            <Suspense fallback={<>...</>}>
+              <VanDetail />
+            </Suspense>
+          }
+          loader={vanLoader}
+        />
+        <Route
+          path="login"
+          element={
+            <Suspense fallback={<>...</>}>
+              <Login />
+            </Suspense>
+          }
+        />
+        <Route
+          path="mypage"
+          element={
+            <Suspense fallback={<>...</>}>
+              <MyPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="host"
+          element={
+            <Suspense fallback={<>...</>}>
+              <Host />
+            </Suspense>
+          }
+        />
+        <Route
+          path="dashboard"
+          element={
+            <Suspense fallback={<>...</>}>
+              <Dashboard />
+            </Suspense>
+          }
+        />
+
         <Route path="*" element={<PageNotFound />} />
       </Route>
     )
