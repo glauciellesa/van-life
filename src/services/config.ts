@@ -1,17 +1,20 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCPkNPKdIIukSnfXJaiim57h69woiS4W6I",
-  authDomain: "van-life-c7117.firebaseapp.com",
-  projectId: "van-life-c7117",
-  storageBucket: "van-life-c7117.appspot.com",
-  messagingSenderId: "795983368656",
-  appId: "1:795983368656:web:c26d2e50bba00b6604a9d5",
-  measurementId: "G-KN7QBCXSZ7",
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_TORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
+  measurementId: import.meta.env.VITE_MEASUREMENTID,
 };
 
 const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
+
+export const db = getFirestore(app);
