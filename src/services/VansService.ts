@@ -1,35 +1,58 @@
 import { Van } from "../models/Van";
-import { collection, getDocs } from "firebase/firestore";
+import {
+  collection,
+  getDoc,
+  getDocs,
+  doc,
+  query,
+  where,
+} from "firebase/firestore";
 import { db } from "./config";
 /* Camada de serviço que acessara a API(Back-end) */
 
 const vansCollection = collection(db, "vans");
 
-const getVansList = async () => {
+export const getVans = async (): Promise<Van[]> => {
   try {
     const data = await getDocs(vansCollection);
-    const filteredData = data.docs.map((doc) => ({ ...doc.data() }));
-    console.log(filteredData);
+    const vans = data.docs.map((doc) => ({ ...doc.data() }));
+    return vans;
   } catch (error) {
     console.error(error);
+    return [];
   }
 };
 
-getVansList();
-
-const URL_BASE = "http://192.168.0.3:4000/vans";
-
-export const getVans = async (): Promise<Van[]> => {
-  const response = await fetch(URL_BASE);
-  return response.json();
-};
-
 export const getVansByType = async (type: string): Promise<Van[]> => {
-  const response = await fetch(`${URL_BASE}?type=${type}`);
-  return response.json();
+  try {
+    const q = query(collection(db, "vans"), where("type", "==", type));
+    const data = await getDocs(q);
+    const vans = data.docs.map((doc) => ({ ...doc.data() }));
+    return vans;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
 };
 
-export const getVan = async (id: number): Promise<Van> => {
-  const response = await fetch(`${URL_BASE}/${id}`);
-  return response.json();
+export const getVan = async (id: number): Promise<Van | undefined> => {
+  try {
+    const docRef = doc(db, "vans", id.toString());
+    const docSnap = await getDoc(docRef);
+    return docSnap.data();
+  } catch (error) {
+    console.error(error);
+    return undefined;
+  }
 };
+
+/* export const init = async (): Promise<void> => {
+  try {
+    const vans = await getVans();
+    for (const van of vans) {
+      const data = await setDoc(doc(db, "vans", van.id?.toString() ?? ""), van);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}; */
