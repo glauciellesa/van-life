@@ -9,6 +9,7 @@ import RootLayout from "./Layout/RootLayout";
 import { vansLoader } from "./pages/Vans/Vans";
 import PageNotFound from "./pages/PageNotFound";
 import { vanLoader } from "./pages/Vans/VanDetail/VanDetail";
+import VansError from "./pages/Vans/VansError";
 
 const Home = lazy(() => import("./pages/Home/Home"));
 const About = lazy(() => import("./pages/About/About"));
@@ -56,7 +57,9 @@ function App() {
             </Suspense>
           }
           loader={vanLoader}
+          errorElement={<VansError />}
         />
+
         <Route
           path="login"
           element={

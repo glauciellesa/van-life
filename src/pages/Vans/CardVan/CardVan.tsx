@@ -29,6 +29,7 @@ const StyledCard = styled.div`
 
   img {
     width: 11rem;
+    border-radius: 0.3rem;
   }
 
   .description {

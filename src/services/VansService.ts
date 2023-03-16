@@ -41,7 +41,7 @@ export const getVan = async (id: number): Promise<Van | undefined> => {
     const docSnap = await getDoc(docRef);
     return docSnap.data();
   } catch (error) {
-    console.error(error);
+    console.error("Could not find van");
     return undefined;
   }
 };

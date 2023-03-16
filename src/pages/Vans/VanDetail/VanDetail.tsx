@@ -88,6 +88,6 @@ const StyledVanDetail = styled.div`
   }
 `;
 
-export const vanLoader = async ({ request, params }: any) => {
-  return getVan(+params.id);
+export const vanLoader = async ({ params }: any) => {
+  return getVan(params.id);
 };
