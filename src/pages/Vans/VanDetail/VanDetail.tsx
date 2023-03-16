@@ -65,6 +65,7 @@ const StyledVanDetail = styled.div`
     width: fit-content;
     padding: 1rem 0;
     img {
+      border-radius: 0.3rem;
       width: 24rem;
     }
   }
