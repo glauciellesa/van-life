@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
     color: #161616;
     background-color: #FFF7ED;
+    
   }
 `;
 export default GlobalStyle;

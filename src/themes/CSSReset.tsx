@@ -9,6 +9,10 @@ const CSSReset = createGlobalStyle`
     &:focus{
       outline: none;
     }
+    a{
+      text-decoration: none;
+      
+    }
   }
   
 

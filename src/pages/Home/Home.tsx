@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import Button from "../../components/Button/Button";
 import homeImg from "../../img/homeImg.png";
@@ -14,7 +15,9 @@ const Home = () => {
           perfect van to make your perfect road trip.
         </p>
         <div className="home_button">
-          <Button> Find your van </Button>
+          <NavLink to="vans">
+            <Button> Find your van </Button>
+          </NavLink>
         </div>
       </div>
     </StyledHome>
@@ -47,6 +50,10 @@ const StyledHome = styled.div`
     padding: 0.5rem;
     border-radius: 0.3rem;
     background-color: #ff8c38;
+
+    a {
+      color: #fff;
+    }
   }
 
   &:after {
