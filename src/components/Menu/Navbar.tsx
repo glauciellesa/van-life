@@ -36,6 +36,8 @@ const StyledNavbar = styled.nav`
   align-items: center;
   padding: 2rem 1rem;
   height: 3rem;
+  box-shadow: 1px 2px 2px hsl(33deg 100% 91% /0.333);
+
   img {
     width: 6rem;
   }
