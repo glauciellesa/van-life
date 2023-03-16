@@ -1,14 +1,25 @@
-import { useLoaderData } from "react-router-dom";
-import styled from "styled-components";
+import { NavLink, useLoaderData } from "react-router-dom";
+import { getVan } from "../../../services/VansService";
+
 import Button from "../../../components/Button/Button";
 import { Van } from "../../../models/Van";
-import { getVan } from "../../../services/VansService";
+
+import styled from "styled-components";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const VanDetail = () => {
   const van = useLoaderData() as Van;
 
   return (
     <StyledVanDetail>
+      <div className="van_back">
+        <NavLink to="/vans">
+          <FontAwesomeIcon icon={faArrowLeft} /> Back to all vans
+        </NavLink>
+      </div>
+
       <div className="van_img">
         <img src={`/img/${van.img}.png`} alt={`${van.product}`} />
       </div>
@@ -39,7 +50,14 @@ const StyledVanDetail = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 1rem;
-
+  .van_back {
+    a {
+      font-size: 0.68rem;
+      color: #201f1d;
+      text-underline-offset: 0.2rem;
+      text-decoration: underline;
+    }
+  }
   .van_img {
     display: flex;
     align-items: center;
