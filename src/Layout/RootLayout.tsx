@@ -22,8 +22,20 @@ const RootLayout = () => {
 export default RootLayout;
 
 const StyledRootLayout = styled.div`
+  display: flex;
+  flex-direction: column;
   height: 100vh;
+  header {
+    height: 50px;
+    flex-shrink: 0;
+  }
+
+  footer {
+    height: 50px;
+    flex-shrink: 0;
+  }
+
   main {
-    min-height: calc(100% - 7rem);
+    flex: 1 0 auto;
   }
 `;

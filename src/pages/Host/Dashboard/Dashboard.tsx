@@ -83,6 +83,7 @@ const StyledDashboard = styled.div`
     }
 
     .dash_review_rate {
+      padding-left: 0.3rem;
       font-weight: 600;
     }
   }
