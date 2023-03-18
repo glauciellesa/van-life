@@ -121,9 +121,10 @@ const StyledLogin = styled.div`
     width: 99%;
     padding: 0.6rem;
     display: flex;
+    gap: 2rem;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     border: 1px solid #ff8c38;
     border-radius: 0.3rem;
     background-color: #fff7ed;
