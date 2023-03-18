@@ -41,6 +41,7 @@ const StyledDashboard = styled.div`
   width: 100%;
   padding-top: 2rem;
   color: #161616;
+
   .dash_header {
     display: flex;
     flex-direction: column;
@@ -106,5 +107,9 @@ const StyledDashboard = styled.div`
 
   .dash_vans_list {
     padding: 1rem;
+  }
+
+  @media (min-width: 600px) {
+    width: 50rem;
   }
 `;

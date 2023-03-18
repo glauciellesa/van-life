@@ -1,6 +1,7 @@
 import aboutImg from "../../img/aboutImg.png";
 import styled from "styled-components";
 import Button from "../../components/Button/Button";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -25,7 +26,9 @@ const About = () => {
             Your destination is waiting. <br /> Your van is ready.
           </p>
           <div className="mission_button">
-            <Button color="#161616">Explore our vans</Button>
+            <Link to="/vans">
+              <Button color="#161616">Explore our vans</Button>
+            </Link>
           </div>
         </div>
       </div>
@@ -63,6 +66,9 @@ const StyledAbout = styled.div`
     margin: 4rem 0;
     padding: 1.5rem;
     background-color: #ffcc8d;
+    a {
+      color: #fff;
+    }
   }
   .mission_description {
     font-weight: bold;
