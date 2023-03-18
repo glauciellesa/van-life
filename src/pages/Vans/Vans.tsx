@@ -48,6 +48,7 @@ const StyledVans = styled.div`
   padding: 3rem 1.2rem;
 
   h1 {
+    padding-top: 2rem;
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: bold;
@@ -72,6 +73,16 @@ const StyledVans = styled.div`
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     gap: 1rem;
+  }
+  @media (min-width: 600px) {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .vans_cards {
+      width: 50rem;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 `;
 
