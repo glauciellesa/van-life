@@ -100,7 +100,7 @@ const StyledLogin = styled.div`
       border-left: 1px solid #4d4d4d;
       border-right: 1px solid #4d4d4d;
       border-radius: 0;
-      padding: 0.4rem;
+      padding: 0.5rem;
       width: 100%;
       margin: 0%;
     }
@@ -146,6 +146,10 @@ const StyledLogin = styled.div`
     justify-content: center;
     align-items: center;
     width: 30rem;
+    .login_with_google,
+    .login_button {
+      width: 18rem;
+    }
   }
 `;
 export default Login;

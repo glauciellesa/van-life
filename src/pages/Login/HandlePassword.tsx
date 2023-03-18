@@ -53,7 +53,7 @@ const StyledHandlePassWord = styled.div`
     flex: 1;
     border: none;
     border-radius: 0;
-    padding: 0.4rem;
+    padding: 0.5rem;
     width: 100%;
     margin: 0%;
   }
