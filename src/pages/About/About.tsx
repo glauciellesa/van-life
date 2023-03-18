@@ -76,4 +76,7 @@ const StyledAbout = styled.div`
     font-size: 1rem;
     font-weight: 600;
   }
+  @media (min-width: 600px) {
+    width: 50rem;
+  }
 `;
