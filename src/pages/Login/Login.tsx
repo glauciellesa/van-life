@@ -93,8 +93,12 @@ const StyledLogin = styled.div`
   .login_form {
     width: 100%;
     padding: 1rem 0;
+
     .email_input {
-      border: 1px solid #4d4d4d;
+      border-bottom: 1px solid #4d4d4d;
+      border-top: 1px solid #4d4d4d;
+      border-left: 1px solid #4d4d4d;
+      border-right: 1px solid #4d4d4d;
       border-radius: 0;
       padding: 0.4rem;
       width: 100%;
@@ -135,6 +139,13 @@ const StyledLogin = styled.div`
     a {
       color: #ff8c38;
     }
+  }
+  @media (min-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30rem;
   }
 `;
 export default Login;

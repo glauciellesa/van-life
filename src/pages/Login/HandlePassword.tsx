@@ -43,9 +43,11 @@ const HandlePassword = (props: HandlePasswordProps) => {
 
 const StyledHandlePassWord = styled.div`
   display: flex;
-  border: 1px solid #4d4d4d;
   padding-right: 0.5rem;
   background-color: #fff;
+  border-bottom: 1px solid #4d4d4d;
+  border-left: 1px solid #4d4d4d;
+  border-right: 1px solid #4d4d4d;
 
   .inputField {
     flex: 1;
