@@ -19,6 +19,7 @@ export default HostLayout;
 
 const StyledNav = styled.nav`
   padding-top: 2rem;
+
   .menu_host a {
     padding: 1rem;
     padding-left: 1rem;
@@ -29,5 +30,9 @@ const StyledNav = styled.nav`
     color: #000;
     text-underline-offset: 0.2rem;
     text-decoration: underline;
+  }
+
+  @media (min-width: 600px) {
+    width: 50rem;
   }
 `;
