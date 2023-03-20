@@ -20,7 +20,7 @@ const Login = lazy(() => import("./pages/Login/Login"));
 const Host = lazy(() => import("./Layout/HostLayout"));
 const MyPage = lazy(() => import("./pages/Login/MyPage"));
 const Dashboard = lazy(() => import("./pages/Host/Dashboard/Dashboard"));
-const VansList = lazy(() => import("./pages/Host/Vans/VansList"));
+/* const VansList = lazy(() => import("./pages/Host/Vans/VansList")); */
 const Income = lazy(() => import("./pages/Host/Income/Income"));
 const Reviews = lazy(() => import("./pages/Host/Reviews/Reviews"));
 
@@ -104,7 +104,7 @@ function App() {
             }
             /* loader={vansLoader} */
           />
-          <Route
+          {/*  <Route
             path="vans"
             element={
               <Suspense fallback={<>...</>}>
@@ -112,7 +112,7 @@ function App() {
               </Suspense>
             }
             loader={vansLoader}
-          />
+          /> */}
           <Route
             path="income"
             element={

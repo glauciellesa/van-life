@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import styled from "styled-components";
 import { Van } from "../../../models/Van";
 
-const VansList = (/* props: Van */) => {
+const VansList = () => {
   const vans = useLoaderData() as Array<Van>;
   console.log(vans);
   return vans.map((van) => {
