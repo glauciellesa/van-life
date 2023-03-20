@@ -11,7 +11,7 @@ const Vans = () => {
   const [search, setSearch] = useSearchParams();
 
   const vans = useLoaderData() as Array<Van>;
-
+  console.log(vans);
   const selectedTypeHandler = (selectedType: string) => {
     setSearch({ type: selectedType });
   };
@@ -86,7 +86,7 @@ const StyledVans = styled.div`
   }
 `;
 
-export const vansLoader = async ({ request, params }: any) => {
+export const vansLoader = async ({ request }: any) => {
   const vanType = new URL(request.url).searchParams.get("type");
   if (vanType) {
     return getVansByType(vanType);
