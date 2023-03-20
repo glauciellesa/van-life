@@ -25,12 +25,8 @@ const StyledRootLayout = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
+  position: relative;
   header {
-    height: 50px;
-    flex-shrink: 0;
-  }
-
-  footer {
     height: 50px;
     flex-shrink: 0;
   }
@@ -40,5 +36,10 @@ const StyledRootLayout = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  footer {
+    height: 50px;
+    flex-shrink: 0;
   }
 `;

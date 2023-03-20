@@ -26,7 +26,6 @@ const VansList = () => {
 export default VansList;
 
 const StyledList = styled.div`
-  height: 102px;
   width: 100%;
   font-size: 2rem;
   font-weight: bold;

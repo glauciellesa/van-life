@@ -121,4 +121,8 @@ const StyledDashboard = styled.div`
   .dash_vans_list {
     padding: 1rem;
   }
+
+  @media (min-width: 600px) {
+    width: 70rem;
+  }
 `;
