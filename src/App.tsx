@@ -22,7 +22,7 @@ const MyPage = lazy(() => import("./pages/Login/MyPage"));
 const Dashboard = lazy(() => import("./pages/Host/Dashboard/Dashboard"));
 const VansListPage = lazy(() => import("./pages/Host/Vans/VansListPage"));
 const Income = lazy(() => import("./pages/Host/Income/Income"));
-const Reviews = lazy(() => import("./pages/Host/Reviews/Reviews"));
+const ReviewsPage = lazy(() => import("./pages/Host/Reviews/ReviewsPage"));
 
 function App() {
   const router = createBrowserRouter(
@@ -125,7 +125,7 @@ function App() {
             path="reviews"
             element={
               <Suspense fallback={<>...</>}>
-                <Reviews />
+                <ReviewsPage />
               </Suspense>
             }
           />

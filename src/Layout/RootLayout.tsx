@@ -33,13 +33,18 @@ const StyledRootLayout = styled.div`
 
   main {
     flex: 1 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   footer {
     height: 50px;
     flex-shrink: 0;
+  }
+
+  @media (min-width: 600px) {
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 `;

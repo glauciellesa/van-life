@@ -22,7 +22,6 @@ const StyledNav = styled.nav`
 
   .menu_host a {
     padding: 1rem;
-    padding-left: 1rem;
     color: #4d4d4d;
     font-weight: 400;
   }

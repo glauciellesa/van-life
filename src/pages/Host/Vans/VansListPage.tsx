@@ -1,3 +1,4 @@
+import Title from "@/components/UI/Title/Title";
 import { useLoaderData } from "react-router-dom";
 import styled from "styled-components";
 import VansList from "../../../components/VansList/VansList";
@@ -8,7 +9,7 @@ const VansListPage = () => {
 
   return (
     <StyledList>
-      <p>Your listed vans</p>
+      <Title>Your listed vans</Title>
       <VansList vans={vans}></VansList>
     </StyledList>
   );
@@ -17,10 +18,11 @@ const VansListPage = () => {
 export default VansListPage;
 
 const StyledList = styled.div`
+  padding: 1rem;
   width: 100%;
   font-size: 2rem;
   font-weight: bold;
-  padding: 2rem 0;
+
   p {
     margin-bottom: 1rem;
   }

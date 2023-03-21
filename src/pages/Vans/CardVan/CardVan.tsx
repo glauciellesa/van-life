@@ -23,12 +23,12 @@ const CardVan = (props: Van) => {
 export default CardVan;
 
 const StyledCard = styled.div`
-  width: 11rem;
+  width: 10rem;
   padding: 1rem 0;
   gap: 1rem;
 
   img {
-    width: 11rem;
+    width: 10rem;
     border-radius: 0.3rem;
   }
 
