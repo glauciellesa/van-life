@@ -8,7 +8,7 @@ import {
 } from "@firebase/auth";
 
 import HandlePassword from "./HandlePassword";
-import Button from "../../components/Button/Button";
+import Button from "../../components/UI/Button/Button";
 
 import styled from "styled-components";
 

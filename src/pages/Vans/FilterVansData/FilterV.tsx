@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Button from "../../../components/Button/Button";
+import Button from "../../../components/UI/Button/Button";
 
 const FilterVans = (props: {
   onSelecteVanType: (selectedType: string) => void;

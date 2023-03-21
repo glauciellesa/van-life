@@ -26,3 +26,8 @@ useSearchParams
 
 Firebase
 Autentication (password/email) google
+
+Feature:
+
+Reestruturar css para que se use variáveis que serão reutilizadas dentro de todo o sistema(tamanho da fonte, cores, expessura, espaçamento... )
+componentizar titulo

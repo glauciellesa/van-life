@@ -2,27 +2,17 @@ import styled from "styled-components";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import VansList from "../Vans/VansList";
-/* import { useLoaderData } from "react-router-dom";
+
 import { Van } from "../../../models/Van";
-import { vanLoader } from "../../Vans/VanDetail/VanDetail"; */
+
+import { useLoaderData } from "react-router-dom";
+import VansList from "../../../components/VansList/VansList";
 
 const Dashboard = () => {
   const qntDay = 30;
   const amoutn = "2,260";
   const rate = "5.0";
-  /* const vans = useLoaderData() as Array<Van>;
-
-  const vanList = vans.map((van) => {
-    return (
-      <VansList
-        key={van.id}
-        img={van.img}
-        product={van.product}
-        price={van.price}
-      />
-    );
-  }); */
+  const vans = useLoaderData() as Array<Van>;
   return (
     <StyledDashboard>
       <div className="dash_header">
@@ -43,7 +33,9 @@ const Dashboard = () => {
         <p className="dash_vans_info">Your listed vans</p>
         <p className="dash_vans_view">View all</p>
       </div>
-      <div className="dash_vans_list">{/* {vanList} */}</div>
+      <div className="dash_vans_list">
+        <VansList vans={vans} />
+      </div>
     </StyledDashboard>
   );
 };
@@ -103,7 +95,8 @@ const StyledDashboard = styled.div`
   }
 
   .dash_vans {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 1rem 0 1rem;
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -123,6 +116,6 @@ const StyledDashboard = styled.div`
   }
 
   @media (min-width: 600px) {
-    width: 70rem;
+    width: 50rem;
   }
 `;

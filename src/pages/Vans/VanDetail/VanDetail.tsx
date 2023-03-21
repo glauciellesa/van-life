@@ -1,7 +1,7 @@
 import { NavLink, useLoaderData } from "react-router-dom";
 import { getVan } from "../../../services/VansService";
 
-import Button from "../../../components/Button/Button";
+import Button from "../../../components/UI/Button/Button";
 import { Van } from "../../../models/Van";
 
 import styled from "styled-components";
