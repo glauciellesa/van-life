@@ -1,13 +1,13 @@
 import Title from "@/components/UI/Title/Title";
-import Reviews from "@/components/UI/Reviews/Reviews";
+import ReviewsItem from "@/components/UI/ReviewsItem/Reviews";
+import Chart from "@/components/UI/ChartReview/Chart";
 
 import styled from "styled-components";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import Chart from "@/components/UI/Chart/Chart";
 
-const ReviewsPage = () => {
+const Reviews = () => {
   let qntDays = 30;
   let rating: number[] = [];
   const reviews = [
@@ -72,13 +72,13 @@ const ReviewsPage = () => {
         <Chart rating={rating} />
       </div>
       <div className="reviews">
-        <Reviews reviewsList={reviews} />
+        <ReviewsItem reviewsList={reviews} />
       </div>
     </StyledReview>
   );
 };
 
-export default ReviewsPage;
+export default Reviews;
 
 const StyledReview = styled.div`
   padding: 1rem;

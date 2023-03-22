@@ -9,7 +9,7 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
-const VanDetail = () => {
+const VanDetailPage = () => {
   const van = useLoaderData() as Van;
 
   return (
@@ -43,7 +43,7 @@ const VanDetail = () => {
   );
 };
 
-export default VanDetail;
+export default VanDetailPage;
 
 const StyledVanDetail = styled.div`
   background-color: #fff7ed;

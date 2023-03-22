@@ -22,10 +22,6 @@ const VansList = ({ vans }: { vans: Van[] }) => {
 export default VansList;
 
 const StyledList = styled.div`
-  width: 100%;
-  font-size: 2rem;
-  font-weight: bold;
-
   .vans_list {
     padding: 1rem;
     border-radius: 0.3rem;
@@ -41,12 +37,12 @@ const StyledList = styled.div`
     border-radius: 0.3rem;
   }
   .title_detail {
-    font-size: 1.3rem;
     font-weight: 600;
+    font-size: 1.1rem;
   }
 
   .detail {
     color: #4d4d4d;
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 `;

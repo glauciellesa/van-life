@@ -8,21 +8,26 @@ import {
 
 import { vansLoader } from "./pages/Vans/Vans";
 import PageNotFound from "./pages/PageNotFound";
-import { vanLoader } from "./pages/Vans/VanDetail/VanDetail";
+import { vanLoader } from "./pages/Vans/VanDetail/VanDetailPage";
 import VansError from "./pages/Vans/VansError";
 
 const RootLayout = lazy(() => import("./Layout/RootLayout"));
 const Home = lazy(() => import("./pages/Home/Home"));
 const About = lazy(() => import("./pages/About/About"));
 const Vans = lazy(() => import("./pages/Vans/Vans"));
-const VanDetail = lazy(() => import("./pages/Vans/VanDetail/VanDetail"));
+const VanDetailPage = lazy(
+  () => import("./pages/Vans/VanDetail/VanDetailPage")
+);
 const Login = lazy(() => import("./pages/Login/Login"));
 const Host = lazy(() => import("./Layout/HostLayout"));
 const MyPage = lazy(() => import("./pages/Login/MyPage"));
 const Dashboard = lazy(() => import("./pages/Host/Dashboard/Dashboard"));
 const VansListPage = lazy(() => import("./pages/Host/Vans/VansListPage"));
 const Income = lazy(() => import("./pages/Host/Income/Income"));
-const ReviewsPage = lazy(() => import("./pages/Host/Reviews/ReviewsPage"));
+const Reviews = lazy(() => import("./pages/Host/Reviews/Reviews"));
+const VansDetail = lazy(
+  () => import("./pages/Host/Vans/VansDetail/VansDetail")
+);
 
 function App() {
   const router = createBrowserRouter(
@@ -64,7 +69,7 @@ function App() {
           path="vans/:id"
           element={
             <Suspense fallback={<>...</>}>
-              <VanDetail />
+              <VanDetailPage />
             </Suspense>
           }
           loader={vanLoader}
@@ -120,14 +125,25 @@ function App() {
                 <Income />
               </Suspense>
             }
+            loader={vansLoader}
           />
           <Route
             path="reviews"
             element={
               <Suspense fallback={<>...</>}>
-                <ReviewsPage />
+                <Reviews />
               </Suspense>
             }
+          />
+          <Route
+            path="host/vans/:id"
+            element={
+              <Suspense fallback={<>...</>}>
+                <VansDetail />
+              </Suspense>
+            }
+            loader={vanLoader}
+            errorElement={<VansError />}
           />
         </Route>
 

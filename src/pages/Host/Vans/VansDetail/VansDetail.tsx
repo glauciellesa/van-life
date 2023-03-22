@@ -1,7 +1,5 @@
-import React from "react";
-
 const VansDetail = () => {
-  return <div></div>;
+  return <div>teste</div>;
 };
 
 export default VansDetail;

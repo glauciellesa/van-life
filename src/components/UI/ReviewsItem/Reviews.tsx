@@ -1,9 +1,11 @@
 import { Review } from "@/models/Review";
+
 import styled from "styled-components";
+
 import Date from "../Date/Date";
 import StarRating from "./StarRating";
 
-const Reviews = ({ reviewsList }: { reviewsList: Review[] }) => {
+const ReviewsItem = ({ reviewsList }: { reviewsList: Review[] }) => {
   return (
     <StyledReview>
       <p className="review_title">Reviews ({reviewsList.length})</p>
@@ -26,7 +28,7 @@ const Reviews = ({ reviewsList }: { reviewsList: Review[] }) => {
   );
 };
 
-export default Reviews;
+export default ReviewsItem;
 
 const StyledReview = styled.div`
   font-size: 0.8rem;
