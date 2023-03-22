@@ -6,10 +6,11 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import Chart from "@/components/UI/Chart/Chart";
+import { Review } from "@/models/Review";
 
 const ReviewsPage = () => {
-  const qntDays = 30;
-  const rating = [5];
+  let qntDays = 30;
+  let rating: number[] = [];
   const reviews = [
     {
       id: 1,
@@ -35,6 +36,14 @@ const ReviewsPage = () => {
       comments:
         "Advertised car was in extremely poor condition. Small brush off with a public dustbin resulted in a rubber protector at door to fall off. Extremely unjust estimated was provided for the incident. Thankfully my full protection insurance covered the entire thing. Two stars only because reception staff was helpful.",
     },
+    {
+      id: 4,
+      name: "Marcos",
+      date: new Date(2023, 1, 12),
+      rating: 2,
+      comments:
+        "Advertised car was in extremely poor condition. Small brush off with a public dustbin resulted in a rubber protector at door to fall off. Extremely unjust estimated was provided for the incident. Thankfully my full protection insurance covered the entire thing. Two stars only because reception staff was helpful.",
+    },
   ];
 
   /* Confirmar com Dannyel se posso fazer isso */
@@ -42,6 +51,7 @@ const ReviewsPage = () => {
   let avarage = 0;
   reviews.map((review) => {
     avarage += review.rating / reviews.length;
+    rating.push(review.rating);
   });
 
   return (
@@ -60,7 +70,7 @@ const ReviewsPage = () => {
         <span>overall rating</span>
       </div>
       <div className="rating_chart">
-        <Chart rating={reviews} />
+        <Chart rating={rating} />
       </div>
       <div className="reviews">
         <Reviews reviewsList={reviews} />
