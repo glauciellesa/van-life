@@ -21,12 +21,12 @@ const VanDetailPage = lazy(
 const Login = lazy(() => import("./pages/Login/Login"));
 const Host = lazy(() => import("./Layout/HostLayout"));
 const MyPage = lazy(() => import("./pages/Login/MyPage"));
-const Dashboard = lazy(() => import("./pages/Host/Dashboard/Dashboard"));
-const VansListPage = lazy(() => import("./pages/Host/Vans/VansListPage"));
-const Income = lazy(() => import("./pages/Host/Income/Income"));
-const Reviews = lazy(() => import("./pages/Host/Reviews/Reviews"));
+const Dashboard = lazy(() => import("./pages/Host/Dashboard/DashboardHost"));
+const VansList = lazy(() => import("./pages/Host/Vans/VansListHost"));
+const Income = lazy(() => import("./pages/Host/Income/IncomeHost"));
+const Reviews = lazy(() => import("./pages/Host/Reviews/ReviewsHost"));
 const VansDetail = lazy(
-  () => import("./pages/Host/Vans/VansDetail/VansDetail")
+  () => import("./pages/Host/Vans/VansDetail/VansDetailHost")
 );
 
 function App() {
@@ -113,7 +113,7 @@ function App() {
             path="vans"
             element={
               <Suspense fallback={<>...</>}>
-                <VansListPage />
+                <VansList />
               </Suspense>
             }
             loader={vansLoader}
