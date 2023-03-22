@@ -5,10 +5,11 @@ import styled from "styled-components";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import Chart from "@/components/UI/Chart/Chart";
 
 const ReviewsPage = () => {
   const qntDays = 30;
-  const rating = 5;
+  const rating = [5];
   const reviews = [
     {
       id: 1,
@@ -26,7 +27,22 @@ const ReviewsPage = () => {
       comments:
         "This is our third time using the Modest Explorer for our travels and we love it! No complaints, absolutely perfect!",
     },
+    {
+      id: 3,
+      name: "Marcos",
+      date: new Date(2023, 1, 12),
+      rating: 2,
+      comments:
+        "Advertised car was in extremely poor condition. Small brush off with a public dustbin resulted in a rubber protector at door to fall off. Extremely unjust estimated was provided for the incident. Thankfully my full protection insurance covered the entire thing. Two stars only because reception staff was helpful.",
+    },
   ];
+
+  /* Confirmar com Dannyel se posso fazer isso */
+
+  let avarage = 0;
+  reviews.map((review) => {
+    avarage += review.rating / reviews.length;
+  });
 
   return (
     <StyledReview>
@@ -37,11 +53,14 @@ const ReviewsPage = () => {
         </p>
       </div>
       <div className="rating">
-        <span className="rating_note">{rating}.0</span>
+        <span className="rating_note">{avarage.toFixed(1)}</span>
         <span className="rating_star">
           <FontAwesomeIcon icon={faStar} />
         </span>
         <span>overall rating</span>
+      </div>
+      <div className="rating_chart">
+        <Chart rating={reviews} />
       </div>
       <div className="reviews">
         <Reviews reviewsList={reviews} />

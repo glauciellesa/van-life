@@ -2,26 +2,30 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 
-const Star = () => {
+const Star = ({ rating }: any) => {
   return (
-    <StyledStar>
-      {[...Array(5)].map((star) => {
+    <StyledRating>
+      {[...Array(5)].map((_, index) => {
         return (
-          <span>
+          <span key={index} className={index < rating ? "clickedStar" : ""}>
             <FontAwesomeIcon icon={faStar} />
           </span>
         );
       })}
-    </StyledStar>
+    </StyledRating>
   );
 };
 
 export default Star;
 
-const StyledStar = styled.div`
-  color: #ff8c38;
+const StyledRating = styled.div`
+  color: #4d4d4d26;
   font-size: 0.8rem;
-  padding: 1rem 0;
+  padding-top: 0.8rem;
+  padding-left: 0.3rem;
   display: flex;
   gap: 0.2rem;
+  .clickedStar {
+    color: #ff8c38;
+  }
 `;
