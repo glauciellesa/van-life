@@ -6,7 +6,6 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import Chart from "@/components/UI/Chart/Chart";
-import { Review } from "@/models/Review";
 
 const ReviewsPage = () => {
   let qntDays = 30;
@@ -83,6 +82,7 @@ export default ReviewsPage;
 
 const StyledReview = styled.div`
   padding: 1rem;
+
   .title {
     display: flex;
     flex-direction: row;

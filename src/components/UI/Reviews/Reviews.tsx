@@ -9,7 +9,7 @@ const Reviews = ({ reviewsList }: { reviewsList: Review[] }) => {
       <p className="review_title">Reviews ({reviewsList.length})</p>
       {reviewsList.map((review) => {
         return (
-          <div key={review.id}>
+          <div key={review.id} className="review_item">
             <div className="review_star">
               <StarRating rating={review.rating} />
             </div>
@@ -30,6 +30,9 @@ export default Reviews;
 
 const StyledReview = styled.div`
   font-size: 0.8rem;
+  .review_item {
+    border-bottom: 1px solid #c7c7c7;
+  }
   .review_title {
     font-size: 1.2rem;
     font-weight: 700;
