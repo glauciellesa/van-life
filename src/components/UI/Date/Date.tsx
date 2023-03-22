@@ -17,6 +17,6 @@ const Date = (props: any) => {
 export default Date;
 
 const StyledData = styled.div`
-  color: #b9b9b9;
-  font-weight: 600;
+  color: #8c8c8c;
+  font-weight: 500;
 `;

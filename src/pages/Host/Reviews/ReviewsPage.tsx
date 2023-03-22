@@ -58,7 +58,7 @@ const ReviewsPage = () => {
       <div className="title">
         <Title>Your reviews</Title>
         <p>
-          last <span>${qntDays} days</span>
+          last <span>{qntDays} days</span>
         </p>
       </div>
       <div className="rating">
@@ -91,8 +91,9 @@ const StyledReview = styled.div`
     color: #4d4d4d;
 
     p {
-      padding-left: 0.4rem;
+      padding-left: 0.6rem;
     }
+
     span {
       font-weight: 700;
       text-decoration: underline;
