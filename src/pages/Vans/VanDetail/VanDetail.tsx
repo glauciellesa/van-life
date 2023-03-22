@@ -35,7 +35,9 @@ const VanDetail = () => {
         <p className="van_description">{van.information}</p>
       </div>
       <div className="van_rent">
-        <Button>Rent this van</Button>
+        <NavLink to="/vass">
+          <Button>Rent this van</Button>
+        </NavLink>
       </div>
     </StyledVanDetail>
   );
@@ -97,7 +99,9 @@ const StyledVanDetail = styled.div`
   }
 
   .van_rent {
-    color: #fff;
+    a {
+      color: #fff;
+    }
     background-color: #ff8c38;
     border-radius: 0.3rem;
     align-content: center;
