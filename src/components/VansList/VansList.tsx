@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Van } from "../../models/Van";
 
@@ -6,13 +7,15 @@ const VansList = ({ vans }: { vans: Van[] }) => {
     <StyledList>
       {vans.map((van) => {
         return (
-          <div className="vans_list" key={van.id}>
-            <img src={`/img/${van.img}.png`} alt={`${van.product}'s photo`} />
-            <div>
-              <p className="title_detail">{van.product}</p>
-              <p className="detail">${van.price} /day</p>
+          <Link to={van.id?.toString() ?? ""} key={van.id}>
+            <div className="vans_list">
+              <img src={`/img/${van.img}.png`} alt={`${van.product}'s photo`} />
+              <div>
+                <p className="title_detail">{van.product}</p>
+                <p className="detail">${van.price} /day</p>
+              </div>
             </div>
-          </div>
+          </Link>
         );
       })}
     </StyledList>

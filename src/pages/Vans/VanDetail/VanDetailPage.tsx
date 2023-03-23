@@ -2,23 +2,18 @@ import { NavLink, useLoaderData } from "react-router-dom";
 import { getVan } from "../../../services/VansService";
 
 import Button from "../../../components/UI/Button/Button";
+import GoBack from "@/components/UI/GoBack/GoBack";
+
 import { Van } from "../../../models/Van";
 
 import styled from "styled-components";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const VanDetailPage = () => {
   const van = useLoaderData() as Van;
 
   return (
     <StyledVanDetail>
-      <div className="van_back">
-        <NavLink to="/vans">
-          <FontAwesomeIcon icon={faArrowLeft} /> Back to all vans
-        </NavLink>
-      </div>
+      <GoBack backTo="/vans" />
 
       <div className="van_img">
         <img src={`/img/${van.img}.png`} alt={`${van.product}`} />
@@ -47,19 +42,10 @@ export default VanDetailPage;
 
 const StyledVanDetail = styled.div`
   background-color: #fff7ed;
-  width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   padding: 0 1rem;
-  .van_back {
-    a {
-      font-size: 0.68rem;
-      color: #201f1d;
-      text-underline-offset: 0.2rem;
-      text-decoration: underline;
-    }
-  }
+
   .van_img {
     display: flex;
     align-items: center;
@@ -68,7 +54,7 @@ const StyledVanDetail = styled.div`
     padding: 1rem 0;
     img {
       border-radius: 0.3rem;
-      width: 24rem;
+      width: 22rem;
     }
   }
 
@@ -108,6 +94,13 @@ const StyledVanDetail = styled.div`
     padding: 0.4rem;
     display: flex;
     justify-content: center;
+  }
+  @media (min-width: 600px) {
+    width: 50rem;
+    gap: 1rem;
+    .van_rent {
+      margin-bottom: 2rem;
+    }
   }
 `;
 

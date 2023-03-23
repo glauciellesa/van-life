@@ -4,20 +4,18 @@ import styled from "styled-components";
 import VansList from "../../../components/VansList/VansList";
 import { Van } from "../../../models/Van";
 
-const VansListPage = () => {
+const VansListHost = () => {
   const vans = useLoaderData() as Array<Van>;
 
   return (
     <StyledList>
       <Title>Your listed vans</Title>
-      <Link to="/vansdetail">
-        <VansList vans={vans}></VansList>
-      </Link>
+      <VansList vans={vans}></VansList>;
     </StyledList>
   );
 };
 
-export default VansListPage;
+export default VansListHost;
 
 const StyledList = styled.div`
   padding: 1rem;

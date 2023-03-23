@@ -7,8 +7,9 @@ import {
 } from "react-router-dom";
 
 import { vansLoader } from "./pages/Vans/Vans";
-import PageNotFound from "./pages/PageNotFound";
 import { vanLoader } from "./pages/Vans/VanDetail/VanDetailPage";
+
+import PageNotFound from "./pages/PageNotFound";
 import VansError from "./pages/Vans/VansError";
 
 const RootLayout = lazy(() => import("./Layout/RootLayout"));
@@ -25,7 +26,7 @@ const Dashboard = lazy(() => import("./pages/Host/Dashboard/DashboardHost"));
 const VansList = lazy(() => import("./pages/Host/Vans/VansListHost"));
 const Income = lazy(() => import("./pages/Host/Income/IncomeHost"));
 const Reviews = lazy(() => import("./pages/Host/Reviews/ReviewsHost"));
-const VansDetail = lazy(
+const VansDetailHost = lazy(
   () => import("./pages/Host/Vans/VansDetail/VansDetailHost")
 );
 
@@ -109,15 +110,7 @@ function App() {
             }
             loader={vansLoader}
           />
-          <Route
-            path="vans"
-            element={
-              <Suspense fallback={<>...</>}>
-                <VansList />
-              </Suspense>
-            }
-            loader={vansLoader}
-          />
+
           <Route
             path="income"
             element={
@@ -136,10 +129,19 @@ function App() {
             }
           />
           <Route
-            path="host/vans/:id"
+            path="vans"
             element={
               <Suspense fallback={<>...</>}>
-                <VansDetail />
+                <VansList />
+              </Suspense>
+            }
+            loader={vansLoader}
+          />
+          <Route
+            path="vans/:id"
+            element={
+              <Suspense fallback={<>...</>}>
+                <VansDetailHost />
               </Suspense>
             }
             loader={vanLoader}
