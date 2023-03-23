@@ -7,6 +7,7 @@ import GoBack from "@/components/UI/GoBack/GoBack";
 import { Van } from "../../../models/Van";
 
 import styled from "styled-components";
+import Tag from "@/components/UI/Tag/Tag";
 
 const VanDetailPage = () => {
   const van = useLoaderData() as Van;
@@ -18,9 +19,8 @@ const VanDetailPage = () => {
       <div className="van_img">
         <img src={`/img/${van.img}.png`} alt={`${van.product}`} />
       </div>
-      <div className="van_button">
-        <Button color={van.color}>{van?.type}</Button>
-      </div>
+      <Tag color={van.color}>{van?.type}</Tag>
+
       <div className="van_conteudo">
         <p className="van_title">{van.product}</p>
         <div className="van_price">
@@ -56,11 +56,6 @@ const StyledVanDetail = styled.div`
       border-radius: 0.3rem;
       width: 22rem;
     }
-  }
-
-  .van_button {
-    color: #ffead0;
-    padding-bottom: 1rem;
   }
 
   .van_title {
