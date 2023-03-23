@@ -10,24 +10,58 @@ const VansDetailHost = () => {
   console.log({ van });
 
   return (
-    <>
+    <StyledVan>
       <GoBack backTo="/host/vans" />
-      <StyledVan>
-        <div className="van_container">
+      <div className="van_container">
+        <div className="van_content">
+          <img src={`/img/${van.img}.png`} alt={`${van.product}`} />
           <div className="van_information">
-            <img src={`/img/${van.img}.png`} alt={`${van.product}`} />
             <Tag color={van.color}>{van?.type}</Tag>
+            <p className="van_title">{van.product}</p>
+            <p className="van_price">
+              ${van.price} <span>/day</span>
+            </p>
           </div>
         </div>
-      </StyledVan>
-    </>
+      </div>
+    </StyledVan>
   );
 };
 
 export default VansDetailHost;
 
 const StyledVan = styled.div`
-  background-color: #ffffff;
+  margin: 1rem;
 
-  border-radius: 0.3rem;
+  .van_container {
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 0.3rem;
+  }
+
+  .van_content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  img {
+    width: 8rem;
+  }
+
+  .van_title {
+    padding: 1rem 0;
+    font-weight: bold;
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+
+  span {
+    font-weight: 200;
+  }
 `;
