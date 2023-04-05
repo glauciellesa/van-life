@@ -29,6 +29,7 @@ const Reviews = lazy(() => import("./pages/Host/Reviews/ReviewsHost"));
 const VansDetailHost = lazy(
   () => import("./pages/Host/Vans/VansDetail/VansDetailHost")
 );
+const VanHostLayout = lazy(() => import("./Layout/VanHostLayout"));
 
 function App() {
   const router = createBrowserRouter(
@@ -120,6 +121,7 @@ function App() {
             }
             loader={vansLoader}
           />
+
           <Route
             path="reviews"
             element={
@@ -128,6 +130,7 @@ function App() {
               </Suspense>
             }
           />
+
           <Route
             path="vans"
             element={
@@ -137,6 +140,7 @@ function App() {
             }
             loader={vansLoader}
           />
+
           <Route
             path="vans/:id"
             element={
