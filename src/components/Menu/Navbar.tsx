@@ -14,14 +14,14 @@ const Navbar = () => {
           <img src={logo} alt="logo's image" />
         </NavLink>
       </div>
-      <div className="menu_navbar">
+      <nav className="menu_navbar">
         <NavLink to="host/dashboard"> Host</NavLink>
         <NavLink to="about"> About</NavLink>
         <NavLink to="vans"> Vans</NavLink>
         <NavLink to="login">
           <FontAwesomeIcon icon={faCircleUser} />
         </NavLink>
-      </div>
+      </nav>
     </StyledNavbar>
   );
 };
@@ -49,9 +49,11 @@ const StyledNavbar = styled.nav`
     padding-left: 1rem;
     color: #4d4d4d;
   }
-  .menu_navbar a.active {
+  .menu_navbar .active,
+  .menu_navbar a:hover {
     color: #000;
     text-underline-offset: 0.2rem;
     text-decoration: underline;
+    font-weight: bold;
   }
 `;
