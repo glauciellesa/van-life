@@ -5,7 +5,7 @@ const VanHostLayout = () => {
   return (
     <StyledVanHost>
       <nav className="menu_host">
-        <NavLink to="detail">Detail</NavLink>
+        <NavLink to=".">Detail</NavLink>
         <NavLink to="pricing">Pricing</NavLink>
         <NavLink to="photo">Photo</NavLink>
       </nav>
@@ -30,9 +30,5 @@ const StyledVanHost = styled.nav`
     text-underline-offset: 0.2rem;
     text-decoration: underline;
     font-weight: bold;
-  }
-
-  @media (min-width: 600px) {
-    width: 50rem;
   }
 `;

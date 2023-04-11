@@ -169,7 +169,7 @@ function App() {
             errorElement={<VansError />}
           >
             <Route
-              path="detail"
+              index
               element={
                 <Suspense fallback={<>...</>}>
                   <VanDetail />
