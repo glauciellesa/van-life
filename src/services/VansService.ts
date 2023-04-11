@@ -46,6 +46,18 @@ export const getVan = async (id: number): Promise<Van | undefined> => {
   }
 };
 
+export const getVansByIdHost = async (idHost: number): Promise<any> => {
+  try {
+    const q = query(collection(db, "vans"), where("hostId", "==", idHost));
+    const data = await getDocs(q);
+    const vans = data.docs.map((doc) => ({ ...doc.data() }));
+    return vans;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+};
+
 /* export const init = async (): Promise<void> => {
   try {
     const vans = await getVans();

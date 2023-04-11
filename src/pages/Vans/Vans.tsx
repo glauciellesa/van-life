@@ -11,7 +11,7 @@ const Vans = () => {
   const [search, setSearch] = useSearchParams();
 
   const vans = useLoaderData() as Array<Van>;
-  console.log(vans);
+
   const selectedTypeHandler = (selectedType: string) => {
     setSearch({ type: selectedType });
   };

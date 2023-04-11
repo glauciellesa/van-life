@@ -11,6 +11,7 @@ import { vanLoader } from "./pages/Vans/VanDetail/VanDetailPage";
 
 import PageNotFound from "./pages/PageNotFound";
 import VansError from "./pages/Vans/VansError";
+import { hostVansLoader } from "./pages/Host/Dashboard/DashboardHost";
 
 const RootLayout = lazy(() => import("./Layout/RootLayout"));
 const Home = lazy(() => import("./pages/Home/Home"));
@@ -20,16 +21,21 @@ const VanDetailPage = lazy(
   () => import("./pages/Vans/VanDetail/VanDetailPage")
 );
 const Login = lazy(() => import("./pages/Login/Login"));
-const Host = lazy(() => import("./Layout/HostLayout"));
+
+const HostLayout = lazy(() => import("./Layout/HostLayout"));
 const MyPage = lazy(() => import("./pages/Login/MyPage"));
 const Dashboard = lazy(() => import("./pages/Host/Dashboard/DashboardHost"));
-const VansList = lazy(() => import("./pages/Host/Vans/VansListHost"));
+const HostVans = lazy(() => import("./pages/Host/HostVans/HostVansList"));
 const Income = lazy(() => import("./pages/Host/Income/IncomeHost"));
 const Reviews = lazy(() => import("./pages/Host/Reviews/ReviewsHost"));
-const VansDetailHost = lazy(
-  () => import("./pages/Host/Vans/VansDetail/VansDetailHost")
+const HostVansDetail = lazy(
+  () => import("./pages/Host/HostVans/HostVansDetail/HostVansDetail")
 );
+
 const VanHostLayout = lazy(() => import("./Layout/VanHostLayout"));
+const VanDetail = lazy(() => import("./pages/Host/HostVans/Detail/VanDetail"));
+const Pricing = lazy(() => import("./pages/Host/HostVans/Pricing/Pricing"));
+const Photo = lazy(() => import("./pages/Host/HostVans/Photo/Photo"));
 
 function App() {
   const router = createBrowserRouter(
@@ -98,7 +104,7 @@ function App() {
           path="host"
           element={
             <Suspense fallback={<>...</>}>
-              <Host />
+              <HostLayout />
             </Suspense>
           }
         >
@@ -109,7 +115,7 @@ function App() {
                 <Dashboard />
               </Suspense>
             }
-            loader={vansLoader}
+            loader={hostVansLoader}
           />
 
           <Route
@@ -135,22 +141,61 @@ function App() {
             path="vans"
             element={
               <Suspense fallback={<>...</>}>
-                <VansList />
+                <HostVans />
               </Suspense>
             }
-            loader={vansLoader}
+            loader={hostVansLoader}
           />
+
+          {/*   <Route
+            path="vans/:id"
+            element={
+              <Suspense fallback={<>...</>}>
+                <HostVansDetail />
+              </Suspense>
+            }
+            loader={vanLoader}
+            errorElement={<VansError />}
+          /> */}
 
           <Route
             path="vans/:id"
             element={
               <Suspense fallback={<>...</>}>
-                <VansDetailHost />
+                <HostVansDetail />
               </Suspense>
             }
             loader={vanLoader}
             errorElement={<VansError />}
-          />
+          >
+            <Route
+              path="detail"
+              element={
+                <Suspense fallback={<>...</>}>
+                  <VanDetail />
+                </Suspense>
+              }
+              loader={vanLoader}
+            />
+            <Route
+              path="pricing"
+              element={
+                <Suspense fallback={<>...</>}>
+                  <Pricing />
+                </Suspense>
+              }
+              loader={vanLoader}
+            />
+            <Route
+              path="photo"
+              element={
+                <Suspense fallback={<>...</>}>
+                  <Photo />
+                </Suspense>
+              }
+              loader={vanLoader}
+            />
+          </Route>
         </Route>
 
         <Route path="*" element={<PageNotFound />} />
