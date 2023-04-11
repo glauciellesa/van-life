@@ -7,12 +7,14 @@ import { Van } from "../../../models/Van";
 
 import { useLoaderData } from "react-router-dom";
 import VansList from "../../../components/VansList/VansList";
+import { getVansByIdHost } from "@/services/VansService";
 
 const Dashboard = () => {
   const qntDay = 30;
   const amoutn = "2,260";
   const rate = "5.0";
   const vans = useLoaderData() as Array<Van>;
+
   return (
     <StyledDashboard>
       <div className="dash_header">
@@ -34,7 +36,8 @@ const Dashboard = () => {
         <p className="dash_vans_view">View all</p>
       </div>
       <div className="dash_vans_list">
-        <VansList vans={vans} />
+        {/* <VansList vans={vans} /> */}
+        {vans.length > 0 ? <VansList vans={vans} /> : <h2>Loading...</h2>}
       </div>
     </StyledDashboard>
   );
@@ -119,3 +122,11 @@ const StyledDashboard = styled.div`
     width: 50rem;
   }
 `;
+
+export const hostVansLoader = async ({ request }: any) => {
+  const idHost = 123;
+  if (idHost) {
+    return getVansByIdHost(+idHost);
+  }
+  return `There is no van assigned to host id:${idHost}`;
+};
