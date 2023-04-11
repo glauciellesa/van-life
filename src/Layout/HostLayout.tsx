@@ -19,7 +19,7 @@ const StyledNav = styled.nav`
   padding-top: 2rem;
 
   a {
-    padding: 1rem;
+    padding: 0 1rem;
     color: #4d4d4d;
     font-weight: 400;
   }
