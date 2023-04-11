@@ -20,7 +20,7 @@ const StyledVanHost = styled.nav`
   padding-top: 2rem;
 
   .menu_host a {
-    padding-right: 1rem;
+    padding: 0 1rem 0 0;
     color: #4d4d4d;
   }
 
