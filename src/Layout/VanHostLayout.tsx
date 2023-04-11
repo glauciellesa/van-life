@@ -20,13 +20,16 @@ const StyledVanHost = styled.nav`
   padding-top: 2rem;
 
   .menu_host a {
-    padding: 1rem;
+    padding-right: 1rem;
     color: #4d4d4d;
   }
-  .menu_host a.active {
+
+  .active,
+  a:hover {
     color: #000;
     text-underline-offset: 0.2rem;
     text-decoration: underline;
+    font-weight: bold;
   }
 
   @media (min-width: 600px) {
