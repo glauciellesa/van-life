@@ -1,9 +1,9 @@
 import { Van } from "@/models/Van";
-import { useLoaderData } from "react-router-dom";
 import styled from "styled-components";
+import { useOutletContext } from "react-router-dom";
 
 const Photo = () => {
-  const van = useLoaderData() as Van;
+  const van: Van = useOutletContext();
 
   return (
     <StyledImg>

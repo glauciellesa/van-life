@@ -1,7 +1,7 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-const VanHostLayout = () => {
+const VanHostLayout = ({ children }: any) => {
   return (
     <StyledVanHost>
       <nav className="menu_host">
@@ -9,7 +9,7 @@ const VanHostLayout = () => {
         <NavLink to="pricing">Pricing</NavLink>
         <NavLink to="photo">Photo</NavLink>
       </nav>
-      <Outlet />
+      {children}
     </StyledVanHost>
   );
 };

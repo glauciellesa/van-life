@@ -1,5 +1,5 @@
 import { Van } from "@/models/Van";
-import { useLoaderData } from "react-router-dom";
+import { Outlet, useLoaderData } from "react-router-dom";
 import GoBack from "@/components/UI/GoBack/GoBack";
 import styled from "styled-components";
 import Tag from "@/components/UI/Tag/Tag";
@@ -21,7 +21,9 @@ const HostVansDetail = () => {
             </p>
           </div>
         </div>
-        <VanHostLayout />
+        <VanHostLayout>
+          <Outlet context={van} />
+        </VanHostLayout>
       </div>
     </StyledVan>
   );

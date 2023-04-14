@@ -125,7 +125,6 @@ function App() {
                 <Income />
               </Suspense>
             }
-            loader={vansLoader}
           />
 
           <Route
@@ -175,7 +174,6 @@ function App() {
                   <VanDetail />
                 </Suspense>
               }
-              loader={vanLoader}
             />
             <Route
               path="pricing"
@@ -184,7 +182,6 @@ function App() {
                   <Pricing />
                 </Suspense>
               }
-              loader={vanLoader}
             />
             <Route
               path="photo"
@@ -193,7 +190,6 @@ function App() {
                   <Photo />
                 </Suspense>
               }
-              loader={vanLoader}
             />
           </Route>
         </Route>
