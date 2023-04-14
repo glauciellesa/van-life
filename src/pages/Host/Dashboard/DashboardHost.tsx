@@ -5,7 +5,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 import { Van } from "../../../models/Van";
 
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import VansList from "../../../components/VansList/VansList";
 import { getVansByIdHost } from "@/services/VansService";
 
@@ -33,11 +33,13 @@ const Dashboard = () => {
       </div>
       <div className="dash_vans">
         <p className="dash_vans_info">Your listed vans</p>
-        <p className="dash_vans_view">View all</p>
+        <p className="dash_vans_view">
+          <Link to="../vans">View all</Link>
+        </p>
       </div>
       <div className="dash_vans_list">
         {/* <VansList vans={vans} /> */}
-        {vans.length > 0 ? <VansList vans={vans} /> : <h2>Loading...</h2>}
+        <h2>Loading...</h2>
       </div>
     </StyledDashboard>
   );
